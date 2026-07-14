@@ -66,5 +66,8 @@ jobs:
       - name: Build and push Docker image
         run: |
           COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/vote:$COMMIT_HASH .
-          docker push ${{ secrets.DOCKER_USERNAME }}/vote:$COMMIT_HASH
+           docker build -t ${{ secrets.DOCKER_USERNAME }}/vote:lastest .
+           docker push ${{ secrets.DOCKER_USERNAME }}/vote:lastest
+
+#          docker build -t ${{ secrets.DOCKER_USERNAME }}/vote:$COMMIT_HASH .
+#          docker push ${{ secrets.DOCKER_USERNAME }}/vote:$COMMIT_HASH
